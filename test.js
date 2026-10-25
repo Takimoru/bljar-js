@@ -1,30 +1,15 @@
-const min = 1;
-const max = 5;
+function maskEmail(email) {
+  const atIndex = email.indexOf("@");
 
-let rand = Math.floor(Math.random()*(max - min)+min);
+  const firstChar = email.slice(0, 1);
 
-for(i = 0; i < 10; i++){
-switch (rand){
-    case 1:
-        console.log("Yoimiya");
-        break;
-    case 2:
-        console.log("HoshimachiSuisei");
-        ;
-    case 3:
-        console.log("VestiaZeta");
-        break;
-    case 4:
-        console.log("Kiara");
-        break;
-    case 5:
-        console.log("Gojo");
-        break;
-    case 6:
-        console.log("Caleb");
-        break;
-    }   
+  const maskCount = atIndex - 2;
+
+  const maskedPart = "*".repeat(maskCount);
+
+  const lastPart = email.slice(atIndex-1);
+
+  return firstChar + maskedPart + lastPart;
 }
-
- 
-
+const email = "apple.pie@example.com";
+console.log(maskEmail(email));
