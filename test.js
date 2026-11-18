@@ -1,15 +1,25 @@
-function isLeapYear(year){
-  if (year % 400 === 0 ) {
-    return `${year} is a leap year.`;
-  } else if (year % 100 === 0 ) {
-    return `${year} is not a leap year.`;
-  } else if (year % 4 === 0 ) {
-    return `${year} is a leap year.`;
-  } else{
-    return `${year} is not a leap year.`;
-  }
-}
-let year = 400;
-const result = isLeapYear(1500);
+const lunches = ["pentol", "salome"];
 
-console.log(result);
+function addLunchToEnd(lunches, item){
+  lunches.push(item);
+  const result = (`${item} added to the end of the lunch menu.`);
+  return result;
+}
+ 
+function addLuncToStart(lunches, item){
+  lunches.unshift(item);
+  const result = (`${item} added to the end of the lunch menu.`);
+  return result;
+}
+
+function removeLastLunch(lunches) {
+  if (lunches.length === 0) {
+    return "No lunches to remove.";
+  }
+
+  const removed = lunches.pop();
+
+  return `${removed} removed from the end of the lunch menu.`;
+}
+console.log(removeLastLunch(lunches));
+  
